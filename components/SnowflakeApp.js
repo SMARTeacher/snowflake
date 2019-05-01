@@ -26,10 +26,10 @@ const hashToState = (hash: String, trackIds: Array<TrackId>): ?SnowflakeAppState
   trackIds.forEach((trackId, i) => {
     result.milestoneByTrack[trackId] = coerceMilestone(Number(hashValues[i]))
   })
-  if (hashValues[16]) result.name = decodeURI(hashValues[16])
-  if (hashValues[17]) result.title = decodeURI(hashValues[17])
-  if (hashValues[18]) result.domain = decodeURI(hashValues[18])
-  if (hashValues[19]) result.targetRole = decodeURI(hashValues[19])
+  if (hashValues[16]) result.name = decodeURIComponent(hashValues[16])
+  if (hashValues[17]) result.title = decodeURIComponent(hashValues[17])
+  if (hashValues[18]) result.domain = decodeURIComponent(hashValues[18])
+  if (hashValues[19]) result.targetRole = decodeURIComponent(hashValues[19])
   return result
 }
 
@@ -110,8 +110,8 @@ const getIdForTrack = (track, tracks) => {
 
 const stateToHash = (state: SnowflakeAppState, trackIds: Array<TrackId>) => {
   if (!state || !state.milestoneByTrack) return null
-  const values = trackIds.map(trackId => state.milestoneByTrack[trackId]).concat(encodeURI(state.name), encodeURI(state.title), encodeURI(state.domain), encodeURI(state.targetRole))
-  return values.join(',')
+  const values = trackIds.map(trackId => state.milestoneByTrack[trackId]).concat(encodeURIComponent(state.name), encodeURIComponent(state.title), encodeURIComponent(state.domain), encodeURIComponent(state.targetRole))
+  return values.join(',') 
 }
 
 const getTargetMilestonesForTargetRole = (targetRoles, targetRoleName) => {
