@@ -5,6 +5,7 @@ import FULLSTACK_TRACKS from './track-definitions/fullstack';
 import OPS_TRACKS from './track-definitions/ops';
 import GAME_TRACKS from './track-definitions/game';
 import BACKEND_TRACKS from './track-definitions/backend';
+import DATA_ENGINEER_TRACKS from './track-definitions/dataengineer';
 
 import FULLSTACK_TARGET_ROLES from './target-roles/fullstack';
 import GAME_TARGET_ROLES from './target-roles/game';
@@ -15,12 +16,14 @@ export const FULLSTACK_DOMAIN = 'Full Stack';
 export const OPS_DOMAIN = 'Ops';
 export const GAME_DOMAIN = 'Game';
 export const BACKEND_DOMAIN = 'Backend';
+export const DATA_ENGINEER_DOMAIN = 'Data Engineer'
 
 export const domains = [
   FULLSTACK_DOMAIN,
   OPS_DOMAIN,
   GAME_DOMAIN,
   BACKEND_DOMAIN,
+  DATA_ENGINEER_DOMAIN,
 ];
 
 export type Track = {
@@ -39,6 +42,7 @@ const allTracks = {
   [OPS_DOMAIN]: OPS_TRACKS,
   [GAME_DOMAIN]: GAME_TRACKS,
   [BACKEND_DOMAIN]: BACKEND_TRACKS,
+  [DATA_ENGINEER_DOMAIN]: DATA_ENGINEER_TRACKS,
 }
 
 const targetRoles = {
