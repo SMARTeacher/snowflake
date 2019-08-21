@@ -8,6 +8,7 @@ import BACKEND_TRACKS from './track-definitions/backend';
 
 import FULLSTACK_TARGET_ROLES from './target-roles/fullstack';
 import GAME_TARGET_ROLES from './target-roles/game';
+import BACKEND_TARGET_ROLES from './target-roles/backend';
 
 export const milestones = [0, 1, 2, 3, 4, 5]
 
@@ -43,7 +44,8 @@ const allTracks = {
 
 const targetRoles = {
   [FULLSTACK_DOMAIN]: FULLSTACK_TARGET_ROLES,
-  [GAME_DOMAIN]: GAME_TARGET_ROLES
+  [GAME_DOMAIN]: GAME_TARGET_ROLES,
+  [BACKEND_DOMAIN]: BACKEND_TARGET_ROLES
 }
 
 export const getTracksForDomain = (domainId: DomainId) => allTracks[domainId] || FULLSTACK_TRACKS;
